@@ -10,8 +10,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/Padmanabha187/lab-maven.git',
+                git branch: 'main',
+                    url: 'https://github.com/Naveen04jan/ven.git',
                     credentialsId: 'github-token'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
             emailext (
                 subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: "Build succeeded!\nCheck: ${BUILD_URL}",
-                to: "padmanabhamr748@gmail.com"
+                to: "naveenmys64@gmail.com"
             )
         }
 
@@ -56,7 +56,7 @@ pipeline {
             emailext (
                 subject: "FAILED: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: "Build failed!\nCheck: ${BUILD_URL}",
-                to: "padmanabhamr748@gmail.com"
+                to: "naveenmys64@gmail.com"
             )
         }
     }
